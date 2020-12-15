@@ -1,6 +1,6 @@
 import {
   Component, OnInit, ComponentRef, ChangeDetectionStrategy, Input, Type,
-  ComponentFactoryResolver, Renderer, ElementRef, ViewContainerRef, OnChanges,
+  ComponentFactoryResolver, Renderer2, ElementRef, ViewContainerRef, OnChanges,
   SimpleChange, ResolvedReflectiveProvider, ReflectiveInjector
 } from '@angular/core';
 
@@ -48,7 +48,7 @@ export class DclComponent implements OnInit, OnChanges {
 
   constructor(
     private _cr: ComponentFactoryResolver,
-    private _renderer: Renderer,
+    private _renderer: Renderer2,
     private _elem: ElementRef,
     private _view: ViewContainerRef
   ) { }
@@ -63,10 +63,8 @@ export class DclComponent implements OnInit, OnChanges {
         this.init(this._cmpRef, this.identifier, this.data);
       }
     } else {
-      this._renderer.createText(
-        this._elem.nativeElement,
-        this.data !== null && this.data !== undefined ? this.data : ''
-      );
+      const text = this._renderer.createText(this.data !== null && this.data !== undefined ? this.data : '');
+      this._renderer.appendChild(this._elem.nativeElement, text);
     }
   }
 
