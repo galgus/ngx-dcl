@@ -4,15 +4,15 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['ngx-dcl'] = {}, global.ng.core, global.ng.common));
 }(this, (function (exports, core, common) { 'use strict';
 
-    function createComponent(cfr, type, vcr, bindings, projectableNodes) {
-        return vcr.createComponent(cfr.resolveComponentFactory(type), vcr.length, getInjector(vcr, bindings), projectableNodes);
-    }
-    function getInjector(viewContainer, bindings) {
+    var getInjector = function (viewContainer, bindings) {
         var ctxInjector = viewContainer.parentInjector;
-        return (Array.isArray(bindings) && bindings.length > 0) ?
-            core.ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector) :
-            ctxInjector;
-    }
+        return Array.isArray(bindings) && bindings.length > 0
+            ? core.ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector)
+            : ctxInjector;
+    };
+    var ɵ0 = getInjector;
+    var createComponent = function (cfr, type, vcr, bindings, projectableNodes) { return vcr.createComponent(cfr.resolveComponentFactory(type), vcr.length, getInjector(vcr, bindings), projectableNodes); };
+    var ɵ1 = createComponent;
     var DclComponent = /** @class */ (function () {
         function DclComponent(_cr, _renderer, _elem, _view) {
             this._cr = _cr;
@@ -68,15 +68,9 @@
     }());
     DclModule.decorators = [
         { type: core.NgModule, args: [{
-                    imports: [
-                        common.CommonModule
-                    ],
-                    declarations: [
-                        DclComponent
-                    ],
-                    exports: [
-                        DclComponent
-                    ]
+                    imports: [common.CommonModule],
+                    declarations: [DclComponent],
+                    exports: [DclComponent]
                 },] }
     ];
 

@@ -1,15 +1,15 @@
 import { ReflectiveInjector, Component, ChangeDetectionStrategy, ComponentFactoryResolver, Renderer2, ElementRef, ViewContainerRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-function createComponent(cfr, type, vcr, bindings, projectableNodes) {
-    return vcr.createComponent(cfr.resolveComponentFactory(type), vcr.length, getInjector(vcr, bindings), projectableNodes);
-}
-function getInjector(viewContainer, bindings) {
+const getInjector = (viewContainer, bindings) => {
     const ctxInjector = viewContainer.parentInjector;
-    return (Array.isArray(bindings) && bindings.length > 0) ?
-        ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector) :
-        ctxInjector;
-}
+    return Array.isArray(bindings) && bindings.length > 0
+        ? ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector)
+        : ctxInjector;
+};
+const ɵ0 = getInjector;
+const createComponent = (cfr, type, vcr, bindings, projectableNodes) => vcr.createComponent(cfr.resolveComponentFactory(type), vcr.length, getInjector(vcr, bindings), projectableNodes);
+const ɵ1 = createComponent;
 class DclComponent {
     constructor(_cr, _renderer, _elem, _view) {
         this._cr = _cr;
@@ -61,15 +61,9 @@ class DclModule {
 }
 DclModule.decorators = [
     { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    DclComponent
-                ],
-                exports: [
-                    DclComponent
-                ]
+                imports: [CommonModule],
+                declarations: [DclComponent],
+                exports: [DclComponent]
             },] }
 ];
 
