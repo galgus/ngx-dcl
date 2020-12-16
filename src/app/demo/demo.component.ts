@@ -5,10 +5,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
   template: '<div (click)="click()">Child {{campo}}</div>'
 })
 export class DemoComponent {
-  private _campo = 0;
-
   // Outputs (Events)
   @Output() public cOutput: EventEmitter<any> = new EventEmitter();
+
+  private _campo = 0;
 
   get campo(): number {
     return this._campo;

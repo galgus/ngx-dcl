@@ -21,30 +21,29 @@ export type InitFunc = (
   data: any
 ) => void;
 
-function createComponent(
+const getInjector = (
+  viewContainer: ViewContainerRef,
+  bindings?: ResolvedReflectiveProvider[]
+) => {
+  const ctxInjector = viewContainer.parentInjector;
+  return Array.isArray(bindings) && bindings.length > 0
+    ? ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector)
+    : ctxInjector;
+};
+
+const createComponent = (
   cfr: ComponentFactoryResolver,
   type: any,
   vcr: ViewContainerRef,
   bindings?: ResolvedReflectiveProvider[],
   projectableNodes?: any[][]
-): ComponentRef<any> {
-  return vcr.createComponent(
+): ComponentRef<any> =>
+  vcr.createComponent(
     cfr.resolveComponentFactory(type),
     vcr.length,
     getInjector(vcr, bindings),
     projectableNodes
   );
-}
-
-function getInjector(
-  viewContainer: ViewContainerRef,
-  bindings?: ResolvedReflectiveProvider[]
-) {
-  const ctxInjector = viewContainer.parentInjector;
-  return Array.isArray(bindings) && bindings.length > 0
-    ? ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector)
-    : ctxInjector;
-}
 
 @Component({
   selector: 'app-dcl',
