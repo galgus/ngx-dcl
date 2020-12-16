@@ -15,8 +15,6 @@
   "author": "Jose Antonio Delgado Alfonso <jose.delgado@gaglus.net>",
   "license": "GPL-3.0",
   "private": false,
-  "types": "dist/ngx-dcl.d.ts",
-  "main": "dist/esm2015/ngx-dcl.js",
   "dependencies": {
     "@angular/animations": "^11.0.4",
     "@angular/common": "^11.0.4",
