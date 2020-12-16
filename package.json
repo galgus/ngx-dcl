@@ -15,9 +15,9 @@
     "ng": "ng",
     "npm-install-peers": "npm-install-peers",
     "packagr": "ng-packagr -p ng-package.json",
+    "prettier": "prettier --check 'src/**/*.ts' --write",
     "start": "ng serve",
-    "test": "ng test",
-    "prettier": "prettier --check 'src/**/*.ts' --write"
+    "test": "ng test"
   },
   "dependencies": {
     "@angular/animations": "^11.0.4",
