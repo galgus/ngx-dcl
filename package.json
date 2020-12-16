@@ -1,26 +1,23 @@
 {
   "name": "ngx-dcl",
   "version": "2.0.0",
-  "description": "angular dynamic loader component",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "npm-install-peers": "npm-install-peers",
-    "packagr": "ng-packagr -p ng-package.json"
-  },
-  "author": "Jose Antonio Delgado Alfonso <jose.delgado@gaglus.net>",
-  "license": "GPL-3.0",
   "private": false,
+  "description": "angular dynamic loader component",
+  "license": "GPL-3.0",
+  "author": "Jose Antonio Delgado Alfonso <jose.delgado@gaglus.net>",
   "main": "dist/bundles/ngx-dcl.umd.js",
   "module": "dist/fesm2015/ngx-dcl.js",
-  "es2015": "dist/fesm2015/ngx-dcl.js",
-  "esm2015": "dist/esm2015/ngx-dcl.js",
-  "fesm2015": "dist/fesm2015/ngx-dcl.js",
   "types": "dist/ngx-dcl.d.ts",
+  "scripts": {
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "npm-install-peers": "npm-install-peers",
+    "packagr": "ng-packagr -p ng-package.json",
+    "start": "ng serve",
+    "test": "ng test"
+  },
   "dependencies": {
     "@angular/animations": "^11.0.4",
     "@angular/common": "^11.0.4",
@@ -58,5 +55,8 @@
     "ts-node": "~7.0.1",
     "tslint": "~6.1.3",
     "typescript": "~4.0.5"
-  }
+  },
+  "es2015": "dist/fesm2015/ngx-dcl.js",
+  "esm2015": "dist/esm2015/ngx-dcl.js",
+  "fesm2015": "dist/fesm2015/ngx-dcl.js"
 }
