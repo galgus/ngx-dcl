@@ -29,7 +29,7 @@
                 }
             }
             else {
-                var text = this.data !== null && this.data !== undefined ? this.data : '';
+                var text = this._renderer.createText(this.data !== null && this.data !== undefined ? this.data : '');
                 this._renderer.appendChild(this._elem.nativeElement, text);
             }
         };

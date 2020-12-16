@@ -26,7 +26,7 @@ class DclComponent {
             }
         }
         else {
-            const text = this.data !== null && this.data !== undefined ? this.data : '';
+            const text = this._renderer.createText(this.data !== null && this.data !== undefined ? this.data : '');
             this._renderer.appendChild(this._elem.nativeElement, text);
         }
     }

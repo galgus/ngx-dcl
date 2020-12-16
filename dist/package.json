@@ -6,9 +6,6 @@
   "license": "GPL-3.0",
   "private": false,
   "dependencies": {
-    "tslib": "^2.0.0"
-  },
-  "peerDependencies": {
     "@angular/animations": "^11.0.4",
     "@angular/common": "^11.0.4",
     "@angular/compiler": "^11.0.4",
@@ -20,6 +17,7 @@
     "@angular/router": "^11.0.4",
     "core-js": "^2.5.4",
     "rxjs": "^6.6.3",
+    "tslib": "^2.0.0",
     "zone.js": "^0.10.3"
   },
   "main": "bundles/ngx-dcl.umd.js",
