@@ -3,17 +3,18 @@
     "src/main.ts",
     "src/polyfills.ts"
   ],
-  "compileOnSave": false,
+  "include": [
+    "src/**/*.d.ts"
+  ],
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "importHelpers": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es6",
+    "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types"
     ],
