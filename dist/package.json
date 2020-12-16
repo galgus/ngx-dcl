@@ -5,6 +5,13 @@
   "author": "Jose Antonio Delgado Alfonso <jose.delgado@gaglus.net>",
   "license": "GPL-3.0",
   "private": false,
+  "main": "bundles/ngx-dcl.umd.js",
+  "module": "fesm2015/ngx-dcl.js",
+  "es2015": "fesm2015/ngx-dcl.js",
+  "esm2015": "esm2015/ngx-dcl.js",
+  "fesm2015": "fesm2015/ngx-dcl.js",
+  "typings": "ngx-dcl.d.ts",
+  "metadata": "ngx-dcl.metadata.json",
   "dependencies": {
     "@angular/animations": "^11.0.4",
     "@angular/common": "^11.0.4",
@@ -20,12 +27,5 @@
     "tslib": "^2.0.0",
     "zone.js": "^0.10.3"
   },
-  "main": "bundles/ngx-dcl.umd.js",
-  "module": "fesm2015/ngx-dcl.js",
-  "es2015": "fesm2015/ngx-dcl.js",
-  "esm2015": "esm2015/ngx-dcl.js",
-  "fesm2015": "fesm2015/ngx-dcl.js",
-  "typings": "ngx-dcl.d.ts",
-  "metadata": "ngx-dcl.metadata.json",
   "sideEffects": false
 }
