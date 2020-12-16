@@ -3,21 +3,20 @@ import { Component, ComponentRef } from '@angular/core';
 import { DemoComponent } from './../demo/demo.component';
 import { InitFunc } from '../modules/dcl/dcl.component';
 
-
 @Component({
   selector: 'app-dcl-section',
   template: `
-  <br>
-  <section>
-    <hr>
-    <button (click)="pruebaClick()">Prueba</button>
-    <div>
-      {{dataOut}}
-      <app-dcl [type]="component" [init]="func" [data]="data"></app-dcl>
-      <app-dcl [data]="data2"></app-dcl>
-    </div>
-    <br>
-  </section>
+    <br />
+    <section>
+      <hr />
+      <button (click)="pruebaClick()">Prueba</button>
+      <div>
+        {{ dataOut }}
+        <app-dcl [type]="component" [init]="func" [data]="data"></app-dcl>
+        <app-dcl [data]="data2"></app-dcl>
+      </div>
+      <br />
+    </section>
   `
 })
 export class DCLSectionComponent {
@@ -41,7 +40,9 @@ export class DCLSectionComponent {
 
   private pruebaInit(component: ComponentRef<any>, data: any): void {
     console.log(
-        'Private variable value: %d and data: %d', this._value, this.data
+      'Private variable value: %d and data: %d',
+      this._value,
+      this.data
     );
     component.instance._campo = this.data;
     console.log(component.instance.cOutput);
@@ -53,7 +54,9 @@ export class DCLSectionComponent {
 
   private pruebaInit2(component: ComponentRef<any>, data: any): void {
     console.log(
-      'Private variable value: %d and data: %d', this._value, this.data
+      'Private variable value: %d and data: %d',
+      this._value,
+      this.data
     );
     component.instance._campo = this.data;
     console.log(component.instance.cOutput);

@@ -8,9 +8,8 @@ describe('DclComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DclComponent ]
-    })
-    .compileComponents();
+      declarations: [DclComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,12 +1,25 @@
 import {
-  Component, OnInit, ComponentRef, ChangeDetectionStrategy, Input, Type,
-  ComponentFactoryResolver, Renderer2, ElementRef, ViewContainerRef, OnChanges,
-  SimpleChange, ResolvedReflectiveProvider, ReflectiveInjector
+  Component,
+  OnInit,
+  ComponentRef,
+  ChangeDetectionStrategy,
+  Input,
+  Type,
+  ComponentFactoryResolver,
+  Renderer2,
+  ElementRef,
+  ViewContainerRef,
+  OnChanges,
+  SimpleChange,
+  ResolvedReflectiveProvider,
+  ReflectiveInjector
 } from '@angular/core';
 
-
-export type InitFunc =
-    (component: ComponentRef<any>, identifier: any, data: any) => void;
+export type InitFunc = (
+  component: ComponentRef<any>,
+  identifier: any,
+  data: any
+) => void;
 
 function createComponent(
   cfr: ComponentFactoryResolver,
@@ -24,19 +37,19 @@ function createComponent(
 }
 
 function getInjector(
-  viewContainer: ViewContainerRef, bindings?: ResolvedReflectiveProvider[]
+  viewContainer: ViewContainerRef,
+  bindings?: ResolvedReflectiveProvider[]
 ) {
   const ctxInjector = viewContainer.parentInjector;
-  return (Array.isArray(bindings) && bindings.length > 0) ?
-      ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector) :
-      ctxInjector;
+  return Array.isArray(bindings) && bindings.length > 0
+    ? ReflectiveInjector.fromResolvedProviders(bindings, ctxInjector)
+    : ctxInjector;
 }
 
 @Component({
   selector: 'app-dcl',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush
-
 })
 export class DclComponent implements OnInit, OnChanges {
   @Input() public type: Type<any>;
@@ -51,7 +64,7 @@ export class DclComponent implements OnInit, OnChanges {
     private _renderer: Renderer2,
     private _elem: ElementRef,
     private _view: ViewContainerRef
-  ) { }
+  ) {}
 
   ngOnInit() {
     if (this.type) {
@@ -63,7 +76,9 @@ export class DclComponent implements OnInit, OnChanges {
         this.init(this._cmpRef, this.identifier, this.data);
       }
     } else {
-      const text = this._renderer.createText(this.data !== null && this.data !== undefined ? this.data : '');
+      const text = this._renderer.createText(
+        this.data !== null && this.data !== undefined ? this.data : ''
+      );
       this._renderer.appendChild(this._elem.nativeElement, text);
     }
   }
